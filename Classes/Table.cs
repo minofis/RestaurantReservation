@@ -2,24 +2,24 @@ namespace RestaurantReservation.Classes
 {
     public class Table
     {
-        private List<DateTime> bd; //booked dates
+        private List<DateTime> bookedDates;
 
         public Table()
         {
-            bd = new List<DateTime>();
+            bookedDates = new List<DateTime>();
         }
 
         // book
-        public bool Book(DateTime d)
+        public bool Book(DateTime bookedDate)
         {
             try
             { 
-                if (bd.Contains(d))
+                if (bookedDates.Contains(bookedDate))
                 {
                     return false;
                 }
                 //add to bd
-                bd.Add(d);
+                bookedDates.Add(bookedDate);
                 return true;
             }
             catch (Exception ex)
@@ -30,9 +30,9 @@ namespace RestaurantReservation.Classes
         }
 
         // is booked
-        public bool IsBooked(DateTime d)
+        public bool IsBooked(DateTime bookedDate)
         {
-            return bd.Contains(d);
+            return bookedDates.Contains(bookedDate);
         }
     }
 }
