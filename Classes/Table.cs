@@ -2,37 +2,43 @@ namespace RestaurantReservation.Classes
 {
     public class Table
     {
-        private List<DateTime> bookedDates;
+        private List<DateTime> BookedDates;
+        public int Number;
 
-        public Table()
+        public Table(int number)
         {
-            bookedDates = new List<DateTime>();
+            BookedDates = new List<DateTime>();
+            Number = number;
         }
 
-        // book
+        // Book table
         public bool Book(DateTime bookedDate)
         {
             try
-            { 
-                if (bookedDates.Contains(bookedDate))
+            {
+                // Checking table availability
+                if (!IsBooked(bookedDate)) 
                 {
-                    return false;
+                    // Adding a book date to the booked dates
+                    BookedDates.Add(bookedDate);
+                    return true;
                 }
-                //add to bd
-                bookedDates.Add(bookedDate);
-                return true;
+                throw new ArgumentException("Error: Table is not available");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error");
+                // Error output            
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(ex.Message);
+                Console.ResetColor();
                 return false;
             }
         }
 
-        // is booked
+        // Check a table is available
         public bool IsBooked(DateTime bookedDate)
         {
-            return bookedDates.Contains(bookedDate);
+            return BookedDates.Contains(bookedDate);
         }
     }
 }
