@@ -1,6 +1,8 @@
+using RestaurantReservation.Interfaces;
+
 namespace RestaurantReservation.Classes
 {
-    public class ReservationManager
+    public class ReservationManager : IReservationManager
     {
         public List<Restaurant> restaurants;
 

@@ -1,6 +1,8 @@
 ﻿using RestaurantReservation.Classes;
+using RestaurantReservation.Interfaces;
 
-public class TableReservationApp
+namespace RestaurantReservation;
+public class Program
 {
     static void Main(string[] args)
     {
