@@ -1,4 +1,4 @@
-namespace RestaurantReservation.Interfaces
+namespace RestaurantReservation.App.Interfaces
 {
     public interface IReservationManager
     {

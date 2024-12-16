@@ -1,4 +1,4 @@
-namespace RestaurantReservation.Classes
+namespace RestaurantReservation.App.Classes
 {
     public class Restaurant
     {

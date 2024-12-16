@@ -1,6 +1,6 @@
-using RestaurantReservation.Interfaces;
+using RestaurantReservation.App.Interfaces;
 
-namespace RestaurantReservation.Classes
+namespace RestaurantReservation.App.Classes
 {
     public class ReservationManager : IReservationManager
     {
@@ -31,6 +31,7 @@ namespace RestaurantReservation.Classes
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                throw;
             }
         }
 
@@ -54,6 +55,7 @@ namespace RestaurantReservation.Classes
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                throw;
             }
         }
 
@@ -63,10 +65,10 @@ namespace RestaurantReservation.Classes
             try
             {
                 // Creating tables output
-                List<string> availableTablesOutput = new();
+                List<string> availableTablesOutput = [];
 
                 // Searching for available tables
-                List<Table> availableTables = new();
+                List<Table> availableTables = [];
 
                 foreach (var restaurant in restaurants)
                 {
@@ -106,7 +108,7 @@ namespace RestaurantReservation.Classes
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return false;
+                throw;
             }
         }
 
@@ -120,6 +122,7 @@ namespace RestaurantReservation.Classes
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                throw;
             }
         }
 
