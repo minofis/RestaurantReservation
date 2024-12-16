@@ -35,14 +35,15 @@ namespace RestaurantReservation.App.Classes
             }
         }
 
-        public void LoadRestaurantsFromFile(string restaurantsFileName)
+        public void LoadRestaurantsFromFile(string filePath)
         {
             try
             {
-                if(string.IsNullOrEmpty(restaurantsFileName)) throw new ArgumentException("Restaurants file name name can't be null or empty");
+                if(string.IsNullOrEmpty(filePath)) throw new ArgumentException("File path string can't be null or empty");
+                if(!File.Exists(filePath)) throw new ArgumentException("File doesn't exist");
 
                 // Getting lines from file
-                var lines = File.ReadAllLines(restaurantsFileName);
+                var lines = File.ReadAllLines(filePath);
                 foreach (string line in lines)
                 {
                     var parts = line.Split(',');
